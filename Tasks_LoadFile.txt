@@ -1,0 +1,4 @@
+TaskTitle; Status; DueDate (DD/MM/YYYY); Project; Done
+TASK01; Not-Started; 21/01/2021; RPA; false
+TASK03; In-Progress; 15/01/2009; SDA; True
+TASK02; Completed; 21/01/2020; EINV; false
