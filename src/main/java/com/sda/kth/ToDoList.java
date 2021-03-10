@@ -14,6 +14,9 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+/**
+ * Todo list is implemented to perform  various tasks
+ */
 public class ToDoList {
 
 	public static List<String> tasks = new ArrayList<>();
