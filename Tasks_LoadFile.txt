@@ -1,4 +1,6 @@
-TaskTitle; Status; DueDate (DD/MM/YYYY); Project; Done
-TASK01; Not-Started; 21/01/2021; RPA; false
-TASK03; In-Progress; 15/01/2009; SDA; True
-TASK02; Completed; 21/01/2020; EINV; false
+TaskID;   TaskTitle;          Project;       DueDate;       Status    
+001;      BluePrint;          RPA1;          25/03/2021;    Pending   
+002;      Design;             SDA;           15/04/2009;    Done      
+003;      PreStudy;           RPA;           23/03/2021;    Pending   
+004;      BluePrint;          RPA;           25/03/2021;    Pending   
+005;      Code;               EINV;          20/05/2021;    Pending   
