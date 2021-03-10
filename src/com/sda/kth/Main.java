@@ -6,6 +6,10 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
+	public static void clearScreen(){
+		for (int i = 0; i < 50; ++i) System.out.println();
+	}
+
 	public static void main(String[] args) {
 		String action = "";
 
@@ -61,7 +65,10 @@ public class Main {
 
 					e.printStackTrace();
 				}
+				clearScreen();
 				System.exit(0);
+
+
 				break;
 			default:
 				System.out.println("Invalid entry try again");
