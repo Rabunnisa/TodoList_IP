@@ -1,6 +1,6 @@
 TaskID;   TaskTitle;          Project;       DueDate;       Status    
 001;      BluePrint;          RPA1;          25/03/2021;    Pending   
-002;      Design;             SDA;           15/04/2009;    Done      
-003;      PreStudy;           RPA;           23/03/2021;    Pending   
+003;ClassDiagram;PF2;19/03/2021;Pending;
 004;      BluePrint;          RPA;           25/03/2021;    Pending   
-005;      Code;               EINV;          20/05/2021;    Pending   
+005;      Code;               EINV;          20/05/2021;Done
+006;SECase;RpaF1;21/03/2001;Pending

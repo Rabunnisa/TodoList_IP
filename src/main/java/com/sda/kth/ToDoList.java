@@ -8,7 +8,9 @@ import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
-
+/**
+ * Here is a todolist App implementation using Add ,Edit and Update the given task
+ */
 public class ToDoList {
 
 	public static List<String> tasks = new ArrayList<>();

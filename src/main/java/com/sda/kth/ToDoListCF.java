@@ -12,6 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class ToDoListCF {
 
 	public static int ordinalIndexOf(String str, String substr, int n) {
