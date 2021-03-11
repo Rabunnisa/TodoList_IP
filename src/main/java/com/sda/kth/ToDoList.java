@@ -8,9 +8,7 @@ import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
-/**
- * Here is a todolist App implementation using Add ,Edit and Update the given task
- */
+
 public class ToDoList {
 
 	public static List<String> tasks = new ArrayList<>();
@@ -22,7 +20,7 @@ public class ToDoList {
 	public static List<String> sortBydate = new ArrayList<>();
 	public static List<String> TaskID = new ArrayList<>();
 	public static List<Date> dateList = new ArrayList<Date>();
-
+	static String constantString = "";
 	//
 
 	public static void readFile() {
@@ -31,7 +29,7 @@ public class ToDoList {
 
 		try {
 
-			Scanner s = new Scanner(new File("src/main/resources/Tasks_LoadFile.txt"));
+			Scanner s = new Scanner(new File("Tasks_LoadFile.txt"));
 			while (s.hasNextLine()) {
 				tasks.add(s.nextLine());
 
@@ -42,7 +40,7 @@ public class ToDoList {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		ToDoList.loadInstance(tasks);
+		ToDoList.formatLoadArrayList(tasks);
 
 	}
 
@@ -53,49 +51,70 @@ public class ToDoList {
 		//
 
 		Scanner input = new Scanner(System.in);
-		System.out.println(" Pick an option\n");
-		System.out.println(mainMenu);
+
+		constantString = " Pick an option\n";
+		ToDoListCF.printString(constantString);
+		ToDoListCF.printString(mainMenu);
+		int choice = 0;
 
 		while (true) {
 
-			int choice = 0;
+			// new code
 
+			// new code
 			try {
 				choice = input.nextInt();
 			} catch (InputMismatchException nfe) {
-				System.out.println("Error in input : You have entered a non Integer field value");
+
+				constantString = "Input exception !  "
+						+ "Error in input : You have entered a non Integer field value , Program Terminated- re run the program !!";
+				ToDoListCF.printString(constantString);
+
+				break;
+				// choice = 0;
 			}
 
-			switch (choice) {
+			switch (choice)
+
+			{
 
 			case 1:
 
 				ToDoListDisplayTaskList.displayTaskList(tasks);
 
 				System.out.println("Select the below sub options");
-				String subMenuDisplay = "" + "11.  Display list by Project \n" + "12. Display list by Date\n";
+				String subMenuDisplay = "" + "01.  Display list by Project \n" + "02. Display list by Date\n"
+						+ "Press any other key to return to main menu";
 				Scanner subinput = new Scanner(System.in);
-				System.out.println(subMenuDisplay);
+
+				ToDoListCF.printString(subMenuDisplay);
 				int subChoiceDisplay = 0;
 				try {
 					subChoiceDisplay = subinput.nextInt();
 				} catch (InputMismatchException nfe) {
-					System.out.println("Invalid Option - May be you have entered a non Integer value");
+					constantString = "Invalid Option - May be you have entered a non Integer value";
+
+					ToDoListCF.printString(constantString);
+
 				}
 
 				switch (subChoiceDisplay) {
-				case 11:
+				case 01:
 					ToDoListDisplayTaskList.displayTaskListByProject(tasks, sortByProject, tasks_Project);
-					System.out.println(mainMenu);
+
+					ToDoListCF.printString(mainMenu);
+
 					break;
-				case 12:
+				case 02:
 					ToDoListDisplayTaskList.displayTaskListByDate(tasks, tasks_Date, sortBydate, dateList);
-					System.out.println(mainMenu);
+					ToDoListCF.printString(mainMenu);
 					break;
 				default:
-					System.out.println("Wrong Input !");
-					System.out.println("Please Try again now  ");
-					System.out.println(mainMenu);
+					constantString = "Wrong Input ! , Please try again\n";
+
+					ToDoListCF.printString(constantString);
+
+					ToDoListCF.printString(mainMenu);
 				}
 
 				// Nested Switch
@@ -105,47 +124,55 @@ public class ToDoList {
 			case 2:
 
 				ToDoListAddTask.AddTask(tasks, TaskID, tasks_Project, tasks_Date);
-				System.out.println(mainMenu);
+				constantString = "Select the below  options";
+				ToDoListCF.printString(constantString);
+
+				ToDoListCF.printString(mainMenu);
 				break;
 			case 3:
 
 				// Nested Switch
+				constantString = " Select the below sub options\n";
+				ToDoListCF.printString(constantString);
 
-				System.out.println(" Select the below sub options");
-				String subMenuEdit = "" + "31. Edit/Modify a Task entry \n" + "32. Remove\n" + "33. Mark as Done\n";
+				String subMenuEdit = "" + "01. Edit/Modify a Task entry \n" + "02. Remove\n" + "03. Mark as Done\n";
 				Scanner subinputEdit = new Scanner(System.in);
-				System.out.println(subMenuEdit);
+				ToDoListCF.printString(subMenuEdit);
 				int subChoiceEdit = 0;
 				//
 				try {
 					subChoiceEdit = subinputEdit.nextInt();
 				} catch (InputMismatchException nfe) {
-					System.out.println("Invalid Option - May be you have entered a non Integer value");
+					constantString = "Invalid Option - May be you have entered a non Integer value";
+
+					ToDoListCF.printString(constantString);
+
 				}
 				//
 
 				switch (subChoiceEdit) {
-				case 31:
+				case 01:
 
 					ToDoListEditTask.editTask(tasks);
-					System.out.println(mainMenu);
+					ToDoListCF.printString(mainMenu);
+
 					break;
-				case 32:
+				case 02:
 
 					ToDoListEditTask.RemoveTaskIndex(tasks);
-					System.out.println(mainMenu);
+					ToDoListCF.printString(mainMenu);
 					break;
 
-				case 33:
+				case 03:
 
 					ToDoListEditTask.MarkDone(tasks);
-					System.out.println(mainMenu);
+					ToDoListCF.printString(mainMenu);
 					break;
 				default:
-					System.out.println("Wrong Input !");
+					constantString = "Wrong Input ! , Please try again\n";
 
-					System.out.println("Please Try again now  ");
-					System.out.println(mainMenu);
+					ToDoListCF.printString(constantString);
+					ToDoListCF.printString(mainMenu);
 
 				}
 
@@ -166,8 +193,9 @@ public class ToDoList {
 				break;
 
 			default:
-				System.out.println("Invalid entry try again");
-				System.out.println(mainMenu);
+				constantString = "Invalid entry try again";
+				ToDoListCF.printString(constantString);
+				ToDoListCF.printString(mainMenu);
 
 			}
 		}
@@ -175,7 +203,7 @@ public class ToDoList {
 
 	//
 
-	public static void loadInstance(List<String> tasks) {
+	public static void formatLoadArrayList(List<String> tasks) {
 
 		tasks_Project.clear();
 		tasks_Date.clear();
@@ -255,7 +283,7 @@ public class ToDoList {
 	}
 	// End of Load
 
-	public static void checkDone() {
+	public static void calculateTaskStatus() {
 		int doneTasks = 0;
 		int pendingTasks = 0;
 		int beginIndexStatus = 0;
@@ -275,8 +303,9 @@ public class ToDoList {
 				doneTasks++;
 
 		}
+		constantString = "You have " + pendingTasks + " tasks todo and " + doneTasks + " tasks are done\n";
 
-		System.out.println("You have " + pendingTasks + " tasks todo and " + doneTasks + " tasks are done\n");
+		ToDoListCF.printString(constantString);
 	}
 
 }

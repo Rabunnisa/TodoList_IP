@@ -12,8 +12,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class ToDoListCF {
+	static String constantString = "";
 
 	public static int ordinalIndexOf(String str, String substr, int n) {
 		int pos = -1;
@@ -39,16 +39,25 @@ public class ToDoListCF {
 
 	public static String userInputProject(String project) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Please enter Project");
+		constantString = "Please enter Project";
+		printString(constantString);
+
 		project = sc.nextLine();
+
+		project = project.replaceAll(";", ",");
+		int count = project.length();
+		if (count > 15)
+			project = project.substring(0, 14);
 		return project;
 
 	}
 
 	public static String userInputDate(String strDate) {
 
-		System.out.println("Please enter Due date");
-		System.out.println("Please enter your Due date in the format dd/MM/yyyy");
+		constantString = "Please enter Due date in the format dd/MM/yyyy";
+		printString(constantString);
+
+		printString("");
 		Scanner scanner = new Scanner(System.in);
 		Date d = null;
 
@@ -61,19 +70,43 @@ public class ToDoListCF {
 
 			//
 		} catch (ParseException e) {
-			e.printStackTrace();
+
+			strDate = "Invalid";
+
 		}
 		return strDate;
 	}
 
+	public static String userInputStatus(String edit_status) {
+		Scanner sc_edit = new Scanner(System.in);
+		constantString = "Please enter Status - Pending or Done";
+		printString(constantString);
+
+		edit_status = sc_edit.nextLine();
+
+		if (!edit_status.trim().equalsIgnoreCase("Pending"))
+			if (!edit_status.trim().equalsIgnoreCase("Done"))
+				edit_status = "Pending";
+
+		return edit_status;
+
+	}
+
 	public static String userInputTaskTitle(String taskTitle) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("");
 
-		System.out.println("Please enter the task/activity");
+		printString("");
+
+		constantString = "Please enter the task/activity";
+		printString(constantString);
+
+		printString("");
 
 		taskTitle = sc.nextLine();
-
+		taskTitle = taskTitle.replaceAll(";", ",");
+		int count = taskTitle.length();
+		if (count > 20)
+			taskTitle = taskTitle.substring(0, 19);
 		return taskTitle;
 
 	}
@@ -91,9 +124,15 @@ public class ToDoListCF {
 
 	}
 
+	public static void printString(String constantString) {
+
+		System.out.println(constantString);
+		// System.out.println("");
+	}
+
 	public static void writeToFile(List<String> tasks) throws FileNotFoundException, IOException {
 
-		File file = new File("src/main/resources/Tasks_LoadFile.txt");
+		File file = new File("Tasks_LoadFile.txt");
 
 		FileOutputStream fout = new FileOutputStream(file);
 		PrintWriter pwrite = new PrintWriter(fout);
@@ -105,10 +144,10 @@ public class ToDoListCF {
 		fout.close();
 	}
 
-	public static void ClearConsole() {
+	public static void clearConsole() {
 
-		System.out.print("\u000C");
+		printString("\u000C");
 
-		System.out.print("\f");
+		printString("\f");
 	}
 }

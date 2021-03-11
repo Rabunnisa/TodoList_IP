@@ -4,17 +4,21 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ToDoListEditTask {
+	static String constantString = "";
 
 	public static void editTask(List<String> tasks) {
 
-		System.out.println(" **********Here is the Current To Do List**********");
-		System.out.println("");
+		constantString = "************Here is the Current To Do List**********";
+		ToDoListCF.printString(constantString);
+		ToDoListCF.printString("");
+
+		ToDoList.formatLoadArrayList(tasks);
 		ToDoListCF.printArrayList(tasks);
 
 		Scanner editTask_input = new Scanner(System.in);
-		System.out.println("");
-
-		System.out.println("Enter the Unique task ID from the above list which you would like to EDIT  ");
+		ToDoListCF.printString("");
+		constantString = "Enter the Unique task ID from the above list which you would like to EDIT  ";
+		ToDoListCF.printString(constantString);
 
 		String task_name = editTask_input.next();
 
@@ -36,9 +40,12 @@ public class ToDoListEditTask {
 			editTaskatIndex(tasks, editIndex, t_task);
 		}
 
-		else
-			System.out.println("Re-Enter correct Task Title , Re-Try");
-		System.out.println("");
+		else {
+			constantString = "Re-Enter correct Task Title , Re-Try";
+			ToDoListCF.printString(constantString);
+
+		}
+		ToDoListCF.printString("");
 	}
 
 	public static void editTaskatIndex(List<String> tasks, int editIndex, String t_task) {
@@ -47,32 +54,40 @@ public class ToDoListEditTask {
 		String edit_taskTitle = "";
 		String edit_project = "";
 		String edit_strDate = "";
+		String edit_status = "";
 
 		edit_taskTitle = ToDoListCF.userInputTaskTitle(edit_taskTitle);
 		edit_project = ToDoListCF.userInputProject(edit_project);
 		edit_strDate = ToDoListCF.userInputDate(edit_strDate);
 
-		Scanner sc_edit = new Scanner(System.in);
-		System.out.println("Please enter new Status - Pending or Done");
-		String edit_status = sc_edit.nextLine();
+		if (!edit_strDate.trim().equalsIgnoreCase("Invalid")) {
+			edit_status = ToDoListCF.userInputStatus(edit_status);
+			editEntry = t_task + ";" + edit_taskTitle + ";" + edit_project + ";" + edit_strDate + ";" + edit_status;
+			tasks.set(editIndex, editEntry);
+			constantString = "Entry Successfully updated";
+			ToDoListCF.printString(constantString);
+			ToDoListCF.printString("");
 
-		editEntry = t_task + ";" + edit_taskTitle + ";" + edit_project + ";" + edit_strDate + ";" + edit_status + ";";
-		tasks.set(editIndex, editEntry);
-		System.out.println("Entry Successfully updated");
-		System.out.println("");
+		} else {
+			constantString = "Invalid date : Entry not updated pls try again \n";
+			ToDoListCF.printString(constantString);
 
+		}
 	}
 
 	public static void RemoveTaskIndex(List<String> tasks) {
+		constantString = " **********Here is the Current To Do List**********";
+		ToDoListCF.printString(constantString);
+		ToDoListCF.printString("");
 
-		System.out.println(" **********Here is the Current To Do List**********");
-		System.out.println("");
+		ToDoList.formatLoadArrayList(tasks);
 		ToDoListCF.printArrayList(tasks);
-		System.out.println("");
-		System.out.println("Enter the Unique task ID from the above list which you would like to REMOVE ");
+		ToDoListCF.printString("");
+		constantString = "Enter the Unique task ID from the above list which you would like to REMOVE ";
+		ToDoListCF.printString(constantString);
 
 		Scanner removeTask_input = new Scanner(System.in);
-		System.out.println("");
+		ToDoListCF.printString("");
 
 		String task_name = removeTask_input.next();
 
@@ -92,25 +107,36 @@ public class ToDoListEditTask {
 		if (t_flag == 1) {
 
 			tasks.remove(removeIndex);
-			System.out.println("**********Entry Successfully Removed************");
+			constantString = "**********Entry Successfully Removed************";
+			ToDoListCF.printString(constantString);
+
 		}
 
-		else
-			System.out.println("In correct Task ID , Re-Try");
-		System.out.println("");
+		else {
+			constantString = "In correct Task ID , Re-Try";
+			ToDoListCF.printString(constantString);
+
+		}
+		ToDoListCF.printString("");
 	}
 
 	public static void MarkDone(List<String> tasks)
 
 	{
-		System.out.println(" **********Here is the Current To Do List**********");
-		System.out.println("");
+
+		constantString = " **********Here is the Current To Do List**********";
+		ToDoListCF.printString(constantString);
+		ToDoListCF.printString("");
+
+		ToDoList.formatLoadArrayList(tasks);
 		ToDoListCF.printArrayList(tasks);
-		System.out.println("");
-		System.out.println("Enter the Unique task ID which needs to be marked DONE ");
+		ToDoListCF.printString("");
+		constantString = "Enter the Unique task ID which needs to be marked DONE ";
+
+		ToDoListCF.printString(constantString);
 
 		Scanner removeTask_input = new Scanner(System.in);
-		System.out.println("");
+		ToDoListCF.printString("");
 
 		String task_name = removeTask_input.next();
 
@@ -137,12 +163,19 @@ public class ToDoListEditTask {
 
 		if (t_flag == 1) {
 
-			System.out.println("**********Successful ! Marked Done************");
+			constantString = "**********Successful ! Marked Done************";
+
+			ToDoListCF.printString(constantString);
+
 		}
 
-		else
-			System.out.println("In correct Task ID , Re-Try");
-		System.out.println("");
+		else {
+			constantString = "In correct Task ID , Re-Try";
+
+			ToDoListCF.printString(constantString);
+
+		}
+		ToDoListCF.printString("");
 
 	}
 

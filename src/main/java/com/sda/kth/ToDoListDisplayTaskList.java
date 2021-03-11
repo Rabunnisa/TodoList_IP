@@ -7,23 +7,27 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ToDoListDisplayTaskList {
+	static String constantString = "";
 
 	public static void displayTaskList(List<String> tasks) {
 
-		System.out.println(" **********To Do List is (Sorted by Unique Task ID) **********");
-		System.out.println("");
+		constantString = " **********To Do List is (Sorted by Unique Task ID) **********";
+		ToDoListCF.printString(constantString);
+		constantString = "";
+
+		ToDoListCF.printString(constantString);
 
 		tasks = tasks.stream().distinct().collect(Collectors.toList());
 
-		ToDoList.loadInstance(tasks);
+		ToDoList.formatLoadArrayList(tasks);
 		ToDoListCF.printArrayList(tasks);
 
-		System.out.println("");
+		ToDoListCF.printString(constantString);
 	}
 
 	public static void displayTaskListByProject(List<String> tasks, List<String> sortByProject,
 			List<String> tasks_Project) {
-		ToDoList.loadInstance(tasks);
+		ToDoList.formatLoadArrayList(tasks);
 		sortByProject.clear();
 
 		sortByProject.addAll(tasks);
@@ -52,18 +56,21 @@ public class ToDoListDisplayTaskList {
 			}
 		}
 
-		System.out.println(" **********To Do List Sorted by Project list **********");
-		System.out.println();
+		constantString = " **********To Do List Sorted by Project Name **********";
+		ToDoListCF.printString(constantString);
 		ToDoListCF.printArrayList(sortByProject);
 
-		System.out.println("");
-		System.out.println(" Pick an option\n");
+		constantString = "";
+		ToDoListCF.printString(constantString);
+
+		constantString = "Pick an option\n";
+		ToDoListCF.printString(constantString);
 
 	}
 
 	public static void displayTaskListByDate(List<String> tasks, List<String> tasks_Date, List<String> sortBydate,
 			List<Date> dateList) {
-		ToDoList.loadInstance(tasks);
+		ToDoList.formatLoadArrayList(tasks);
 		sortBydate.clear();
 		dateList.clear();
 		sortBydate.addAll(tasks);
@@ -110,18 +117,17 @@ public class ToDoListDisplayTaskList {
 				}
 			}
 		}
+		constantString = " **********To Do List Sorted by Date  **********";
+		ToDoListCF.printString(constantString);
 
-		System.out.println(" **********To Do List Sorted by Date list **********");
-
-		System.out.println();
-
-		System.out.println("TaskID;   Task;             Project;       DueDate;       Status   ");
+		ToDoListCF.printString("");
+		constantString = "TaskID;   Task;             Project;       DueDate;       Status   ";
+		ToDoListCF.printString(constantString);
 
 		ToDoListCF.printArrayList(sortBydate);
-
-		System.out.println("");
-		System.out.println(" Pick an option\n");
-
+		ToDoListCF.printString("");
+		constantString = "Pick an option\n";
+		ToDoListCF.printString(constantString);
 	}
 
 }
