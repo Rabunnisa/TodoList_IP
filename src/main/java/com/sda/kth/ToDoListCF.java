@@ -132,7 +132,7 @@ public class ToDoListCF {
 
 	public static void writeToFile(List<String> tasks) throws FileNotFoundException, IOException {
 
-		File file = new File("Tasks_LoadFile.txt");
+		File file = new File("src/main/resources/Tasks_LoadFile.txt");
 
 		FileOutputStream fout = new FileOutputStream(file);
 		PrintWriter pwrite = new PrintWriter(fout);

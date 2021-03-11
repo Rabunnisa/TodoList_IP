@@ -29,7 +29,7 @@ public class ToDoList {
 
 		try {
 
-			Scanner s = new Scanner(new File("Tasks_LoadFile.txt"));
+			Scanner s = new Scanner(new File("src/main/resources/Tasks_LoadFile.txt"));
 			while (s.hasNextLine()) {
 				tasks.add(s.nextLine());
 
