@@ -9,8 +9,9 @@ import java.util.stream.Collectors;
 public class ToDoListDisplayTaskList {
 	static String constantString = "";
 
-	public static void displayTaskList(List<String> tasks) {
 
+	public static void displayTaskList(List<String> tasks) {
+		ToDoList todo = new ToDoList();
 		constantString = " **********To Do List is (Sorted by Unique Task ID) **********";
 		ToDoListCF.printString(constantString);
 		constantString = "";
@@ -19,7 +20,7 @@ public class ToDoListDisplayTaskList {
 
 		tasks = tasks.stream().distinct().collect(Collectors.toList());
 
-		ToDoList.formatLoadArrayList(tasks);
+		todo.formatLoadArrayList(tasks);
 		ToDoListCF.printArrayList(tasks);
 
 		ToDoListCF.printString(constantString);

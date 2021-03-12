@@ -1,7 +1,9 @@
 package com.sda.kth;
 
 import java.util.List;
-
+/**
+ * The purpose of this class is to add a new task to the existing ToDoList by taking inputs
+ */
 public class ToDoListAddTask {
 
 	static String constantString = "";

@@ -3,20 +3,27 @@ package com.sda.kth;
 
 /**
  * This is a main method which triggers the execution of ToDoList App.
- * it is loading tasks from the file by calling readFile().
- * @initSwitch is used to provide the user to choose between different options .
+ * @readFile() it is called to load tasks from the file .
+ * @initSwitch is called to provide the user to choose between different options and sub options of the App.
+ * @printString is called with a constant
+ *
+ *
+ * @author  Rabunnisa Zabiulla
  */
 public class Main {
 	public static String constantString = "";
 
 	public static void main(String[] args) {
 
-		ToDoList.readFile();
-		constantString = " ********** Welcome to ToDoLy **********";
-		ToDoListCF.printString(constantString);
+		ToDoList todo = new ToDoList();
+		ToDoListCF listCF = new ToDoListCF();
 
-		ToDoList.calculateTaskStatus();
-		ToDoList.initSwitch();
+		todo.readFile();
+		constantString = " ********** Welcome to ToDoLy **********";
+		listCF.printString(constantString);
+
+		todo.calculateTaskStatus();
+		todo.initSwitch();
 
 	}
 

@@ -8,7 +8,10 @@ import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
-
+/**
+ * The purpose of this class is to provide 4 methods which are used to read a file,Provide user options using initSwitch,
+ * calculate task status,load and format the Arraylist.
+ */
 public class ToDoList {
 
 	public static List<String> tasks = new ArrayList<>();
@@ -20,8 +23,10 @@ public class ToDoList {
 	public static List<Date> dateList = new ArrayList<Date>();
 	static String constantString = "";
 	//
-
-	public static void readFile() {
+	/**
+	 * This method is used to load the tasks from the input file in which the tasks are semicolon separated .
+	 */
+	public void readFile() {
 
 		tasks.clear();
 
@@ -41,7 +46,10 @@ public class ToDoList {
 		ToDoList.formatLoadArrayList(tasks);
 
 	}
-
+	/**
+	 * This method is used to provide user options to select operations on the TodoList .
+	 * for every selected option specific class-method is called
+	 */
 	public static void initSwitch() {
 
 		String mainMenu = "" + "1. Load/Show Task List (by Date or Project) \n" + "2. Add New Task\n"
@@ -57,9 +65,7 @@ public class ToDoList {
 
 		while (true) {
 
-			// new code
 
-			// new code
 			try {
 				choice = input.nextInt();
 			} catch (InputMismatchException nfe) {
@@ -199,8 +205,11 @@ public class ToDoList {
 		}
 	}
 
-	//
 
+	/**
+	 * This method is used to format and load the  Todolist it also loads the other Arraylists tasks_Project, tasks_Date
+	 * TaskID which will be used to perform operations like sorting by Date and Project
+	 */
 	public static void formatLoadArrayList(List<String> tasks) {
 
 		tasks_Project.clear();
@@ -267,18 +276,23 @@ public class ToDoList {
 			String format_ToDoListVal = "";
 
 			format_ToDoListVal = t_TaskID + t_TaskTitle + t_Project + t_Date + t_Status;
+
 			TaskID.add(ToDoListCF.rightPadding(t_ToDoListVal.substring(0, endIndexTaskId), ' ', 8));
+
 			tasks_Project.add(t_ToDoListVal.substring(beginIndexProject + 1, endIndexProject).trim());
 			tasks_Date.add(t_ToDoListVal.substring(beginIndexDate + 1, endIndexDate).trim());
-
+			//tasks_Status.add(t_ToDoListVal.substring(beginIndexStatus + 1, endIndexStatus).trim());
 
 			tasks.set(i, format_ToDoListVal);
 		}
 
 	}
-	// End of Load
+	/**
+	 * This method is  called at the beginning of the execution ,to  calculate/display the number of tasks
+	 * which are pending and Done
+	 */
 
-	public static void calculateTaskStatus() {
+	public void calculateTaskStatus() {
 		int doneTasks = 0;
 		int pendingTasks = 0;
 		int beginIndexStatus = 0;
