@@ -13,8 +13,6 @@ public class ToDoList {
 
 	public static List<String> tasks = new ArrayList<>();
 	public static List<String> tasks_Date = new ArrayList<>();
-	public static List<String> tasks_Status = new ArrayList<>();
-	public static List<String> tasks_Title = new ArrayList<>();
 	public static List<String> tasks_Project = new ArrayList<>();
 	public static List<String> sortByProject = new ArrayList<>();
 	public static List<String> sortBydate = new ArrayList<>();
@@ -207,9 +205,8 @@ public class ToDoList {
 
 		tasks_Project.clear();
 		tasks_Date.clear();
-		tasks_Title.clear();
 		TaskID.clear();
-		tasks_Status.clear();
+
 
 		String t_ToDoListVal = "";
 		for (int i = 0; i < tasks.size(); i++) {
@@ -270,12 +267,10 @@ public class ToDoList {
 			String format_ToDoListVal = "";
 
 			format_ToDoListVal = t_TaskID + t_TaskTitle + t_Project + t_Date + t_Status;
-
 			TaskID.add(ToDoListCF.rightPadding(t_ToDoListVal.substring(0, endIndexTaskId), ' ', 8));
-			tasks_Title.add(t_ToDoListVal.substring(beginIndexTaskTitle + 1, endIndexTaskTitle).trim());
 			tasks_Project.add(t_ToDoListVal.substring(beginIndexProject + 1, endIndexProject).trim());
 			tasks_Date.add(t_ToDoListVal.substring(beginIndexDate + 1, endIndexDate).trim());
-			tasks_Status.add(t_ToDoListVal.substring(beginIndexStatus + 1, endIndexStatus).trim());
+
 
 			tasks.set(i, format_ToDoListVal);
 		}
