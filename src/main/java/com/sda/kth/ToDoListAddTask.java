@@ -36,7 +36,7 @@ public class ToDoListAddTask {
 			tasks_Project.add(project);
 			tasks_Date.add(strDate);
 
-			constantString = "Entry is successfully added to the list\ngit";
+			constantString = "Entry Successfully added";
 			ToDoListCF.printString(constantString);
 			constantString = "";
 			ToDoListCF.printString(constantString);

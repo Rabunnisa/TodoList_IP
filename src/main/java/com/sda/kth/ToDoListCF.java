@@ -102,12 +102,25 @@ public class ToDoListCF {
 
 		printString("");
 
-		taskTitle = sc.nextLine();
-		taskTitle = taskTitle.replaceAll(";", ",");
-		int count = taskTitle.length();
-		if (count > 20)
-			taskTitle = taskTitle.substring(0, 19);
-		return taskTitle;
+		//
+		taskTitle = "";
+		while (true) {
+			taskTitle = sc.nextLine();
+			if (taskTitle.equals(""))
+
+				taskTitle = ""; // todo
+			else
+				taskTitle = taskTitle.replaceAll(";", ",");
+
+			int count = taskTitle.length();
+			if (count > 20)
+				taskTitle = taskTitle.substring(0, 19);
+			return taskTitle;
+
+		}
+		//
+
+		// taskTitle = sc.nextLine();
 
 	}
 
