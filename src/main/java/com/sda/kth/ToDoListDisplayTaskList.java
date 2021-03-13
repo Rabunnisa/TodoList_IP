@@ -5,11 +5,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
-
+/**
+ * This class is used to Display the tasks provided by the user in the ascending order of Unique TaskId,
+		*/
 public class ToDoListDisplayTaskList {
 	static String constantString = "";
 
-
+	/**
+	 * This method is used to validate whether the TaskId provided by the user is valid and also to
+	 * capture the index of the TaskId which needs to be edit .
+	 * @param tasks this Arraylist contains all the tasks which are provided by the user
+	 */
 	public static void displayTaskList(List<String> tasks) {
 		ToDoList todo = new ToDoList();
 		constantString = " **********To Do List is (Sorted by Unique Task ID) **********";
