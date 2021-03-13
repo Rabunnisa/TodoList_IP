@@ -15,21 +15,16 @@ public class ToDoListAddTask {
 	 * @param tasks_Date the date provided by the user is also appended to this list .
 	 */
 	public static void AddTask(List<String> tasks, List<String> TaskID, List<String> tasks_Project,
-							   List<String> tasks_Date) {
+							   List<String> tasks_Date,String taskTitle,String project,String strDate) {
 
 		constantString = "Adding elements to the list";
 		ToDoListCF.printString(constantString);
 
 		String status_init = "Pending";
 
-		String taskTitle = "";
 
-		String strDate = "";
-		String project = "";
 
-		taskTitle = ToDoListCF.userInputTaskTitle(taskTitle);
-		project = ToDoListCF.userInputProject(project);
-		strDate = ToDoListCF.userInputDate(strDate);
+
 
 		if (!strDate.trim().equalsIgnoreCase("Invalid")) {
 
