@@ -34,7 +34,7 @@ public class ToDoListTest {
      * This method is used to check the calculate the number of tasks which are pending and done in the initial task list.
      */
     @Test
-    void calculateTaskStatusTest()
+    void calculateNumberOfPendingDoneTaskTest()
 {ToDoList todo = new ToDoList();
     List<String> tasks = new ArrayList<>();
     tasks.add("TaskID;   TaskTitle;          Project;       DueDate;       Status  ");

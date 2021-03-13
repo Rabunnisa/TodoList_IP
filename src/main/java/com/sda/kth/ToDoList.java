@@ -127,11 +127,15 @@ public class ToDoList {
 				break;
 
 			case 2:
-
-				ToDoListAddTask.AddTask(tasks, TaskID, tasks_Project, tasks_Date);
+				String taskTitle = "";
+				String project = "";
+				String strDate = "";
+				 taskTitle = ToDoListCF.userInputTaskTitle(taskTitle);
+				 project = ToDoListCF.userInputProject(project);
+				 strDate = ToDoListCF.userInputDate(strDate);
+				ToDoListAddTask.AddTask(tasks, TaskID, tasks_Project, tasks_Date,taskTitle,project,strDate);
 				constantString = "Select the below  options";
 				ToDoListCF.printString(constantString);
-
 				ToDoListCF.printString(mainMenu);
 				break;
 			case 3:

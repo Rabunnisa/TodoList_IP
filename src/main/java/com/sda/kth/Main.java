@@ -10,6 +10,8 @@ public class Main {
 	public static String constantString = "";
 
 	public static void main(String[] args) {
+		int doneTasks = 0;
+		int pendingTasks = 0;
 
 		ToDoList todo = new ToDoList();
 		ToDoListCF listCF = new ToDoListCF();
