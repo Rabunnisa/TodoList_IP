@@ -210,8 +210,9 @@ public class ToDoList {
 	/**
 	 * This method is used to format and load the  Todolist it also loads the other Arraylists tasks_Project, tasks_Date
 	 * TaskID which will be used to perform operations like sorting by Date and Project
+	 * @return
 	 */
-	public static void formatLoadArrayList(List<String> tasks) {
+	public static byte formatLoadArrayList(List<String> tasks) {
 
 		tasks_Project.clear();
 		tasks_Date.clear();
@@ -287,6 +288,7 @@ public class ToDoList {
 			tasks.set(i, format_ToDoListVal);
 		}
 
+		return 0;
 	}
 	/**
 	 * This method is  called at the beginning of the execution ,to  calculate/display the number of tasks
