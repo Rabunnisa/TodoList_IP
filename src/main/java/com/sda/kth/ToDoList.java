@@ -51,13 +51,14 @@ public class ToDoList {
 	 * This method is used to provide user options to select operations on the TodoList .
 	 * for every selected option specific class-method is called
 	 */
+	//static Scanner input = new Scanner(System.in);
 	public static void initSwitch() {
 
 		String mainMenu = "" + "1. Load/Show Task List (by Date or Project) \n" + "2. Add New Task\n"
 				+ "3. Edit Task (Update,Mark as Done , remove)\n" + "4. Save and Quit\n";
 		//
 
-		Scanner input = new Scanner(System.in);
+		 Scanner input = new Scanner(System.in);
 
 		constantString = " Pick an option\n";
 		ToDoListCF.printString(constantString);
