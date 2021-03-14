@@ -14,22 +14,13 @@ public class ToDoListEditTask {
 	 * capture the index of the TaskId which needs to be edit .
 	 * @param tasks this Arraylist contains all the tasks which are provided by the user
 	 */
-	public static void editTask(List<String> tasks) {
+	public static void editTask(List<String> tasks,String edit_TaskID) {
 
-		constantString = "************Here is the Current To Do List**********";
-		ToDoListCF.printString(constantString);
-		ToDoListCF.printString("");
+
 
 		ToDoList.formatLoadArrayList(tasks);
-		ToDoListCF.printArrayList(tasks);
 
-		Scanner editTask_input = new Scanner(System.in);
-		ToDoListCF.printString("");
-		constantString = "Enter the Unique task ID from the above list which you would like to EDIT  ";
-		ToDoListCF.printString(constantString);
-
-		String task_name = editTask_input.next();
-
+		String task_name = edit_TaskID;
 		String t_task = "";
 		int t_flag = 0;
 		int editIndex = 0;
@@ -95,21 +86,12 @@ public class ToDoListEditTask {
 	 * @param tasks this Arraylist contains all the tasks which are provided by the user.
 	 */
 
-	public static void RemoveTaskIndex(List<String> tasks) {
-		constantString = " **********Here is the Current To Do List**********";
-		ToDoListCF.printString(constantString);
-		ToDoListCF.printString("");
+	public static void RemoveTaskIndex(List<String> tasks,String edit_TaskID) {
 
 		ToDoList.formatLoadArrayList(tasks);
-		ToDoListCF.printArrayList(tasks);
-		ToDoListCF.printString("");
-		constantString = "Enter the Unique task ID from the above list which you would like to REMOVE ";
-		ToDoListCF.printString(constantString);
 
-		Scanner removeTask_input = new Scanner(System.in);
-		ToDoListCF.printString("");
+		String task_name = edit_TaskID;
 
-		String task_name = removeTask_input.next();
 
 		String taskId = "";
 		int t_flag = 0;
@@ -143,25 +125,13 @@ public class ToDoListEditTask {
 	 * This method is used to Mark specific task as done with specific TaskId provided by the user.
 	 * @param tasks this Arraylist contains all the tasks which are provided by the user.
 	 */
-	public static void MarkDone(List<String> tasks)
+	public static void MarkDone(List<String> tasks,String edit_TaskID)
 
 	{
 
-		constantString = " **********Here is the Current To Do List**********";
-		ToDoListCF.printString(constantString);
-		ToDoListCF.printString("");
+		String task_name = edit_TaskID;
+		//
 
-		ToDoList.formatLoadArrayList(tasks);
-		ToDoListCF.printArrayList(tasks);
-		ToDoListCF.printString("");
-		constantString = "Enter the Unique task ID which needs to be marked DONE ";
-
-		ToDoListCF.printString(constantString);
-
-		Scanner removeTask_input = new Scanner(System.in);
-		ToDoListCF.printString("");
-
-		String task_name = removeTask_input.next();
 
 		String taskId = "";
 		String t_arrayVal = "";

@@ -161,20 +161,27 @@ public class ToDoList {
 
 				switch (subChoiceEdit) {
 				case 01:
-
-					ToDoListEditTask.editTask(tasks);
+					String edit_TaskID = "";
+					String constantString_taskID ="";
+					constantString_taskID = "Enter the Unique task ID from the above list which you would like to EDIT  ";
+					edit_TaskID = ToDoListCF.userInputTaskID(edit_TaskID,constantString_taskID,tasks);
+					ToDoListEditTask.editTask(tasks,edit_TaskID);
 					ToDoListCF.printString(mainMenu);
 
 					break;
 				case 02:
-
-					ToDoListEditTask.RemoveTaskIndex(tasks);
+					 edit_TaskID = "";
+					constantString_taskID = "Enter the Unique task ID from the above list which you would like to Remove  ";
+					edit_TaskID = ToDoListCF.userInputTaskID(edit_TaskID,constantString_taskID,tasks);
+					ToDoListEditTask.RemoveTaskIndex(tasks,edit_TaskID);
 					ToDoListCF.printString(mainMenu);
 					break;
 
 				case 03:
-
-					ToDoListEditTask.MarkDone(tasks);
+					edit_TaskID = "";
+					constantString_taskID = "Enter the Unique task ID from the above list which you would like to mark done  ";
+					edit_TaskID = ToDoListCF.userInputTaskID(edit_TaskID,constantString_taskID,tasks);
+					ToDoListEditTask.MarkDone(tasks,edit_TaskID);
 					ToDoListCF.printString(mainMenu);
 					break;
 				default:

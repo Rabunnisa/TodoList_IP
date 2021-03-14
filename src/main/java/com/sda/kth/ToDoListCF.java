@@ -91,6 +91,20 @@ public class ToDoListCF {
 		return edit_status;
 
 	}
+	public static String userInputTaskID(String edit_TaskID,String constantString_taskID,List<String> tasks) {
+		ToDoList.formatLoadArrayList(tasks);
+		constantString = "************Here is the Current To Do List**********";
+		ToDoListCF.printString(constantString);
+		ToDoListCF.printString("");
+		ToDoListCF.printArrayList(tasks);
+
+		Scanner editTask_input = new Scanner(System.in);
+		ToDoListCF.printString("");
+
+		ToDoListCF.printString(constantString_taskID);
+		edit_TaskID = editTask_input.next();
+		return edit_TaskID;
+	}
 
 	public static String userInputTaskTitle(String taskTitle) {
 		Scanner sc = new Scanner(System.in);
