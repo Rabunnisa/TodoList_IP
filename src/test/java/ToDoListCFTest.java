@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ToDoListCFTest {
     @Test
-    void CheckOrdinalIndexOfAStiring() {
+    void CheckOrdinalIndexOfAString() {
         ToDoListCF ComFunc = new ToDoListCF();
         String input = "001;BluePrint;RPA1;25/03/2021;Pending ";
         String expected_output = "RPA1"; // This is the string between the Ordinal index 1 and 2 with ";" as the character
@@ -20,16 +20,34 @@ public class ToDoListCFTest {
       String output = input.substring(startIndex+1,endIndex);
         assertEquals(expected_output,output);
     }
+    @Test
+    void CheckOrdinalIndexOfAStringAndCompareForIncorrectValue() {
+        ToDoListCF ComFunc = new ToDoListCF();
+        String input = "001;BluePrint;RPA1;25/03/2021;Pending ";
+        String expected_output = "BluePrint";
+
+        int startIndex =   ComFunc.ordinalIndexOf(input, ";", 1);
+        int endIndex =  ComFunc.ordinalIndexOf(input, ";", 2);
+        String output = input.substring(startIndex+1,endIndex);
+        assertNotEquals(expected_output,output);
+    }
 
     @Test
-    void CheckRightPaddingForAgivenStirng() {
+    void CheckRightPaddingForAgivenString() {
         String input = "BluePrint";
         String expected_output = "BluePrint######";
         ToDoListCF ComFunc = new ToDoListCF();
 
         assertEquals(ComFunc.rightPadding(input,'#',15),expected_output);
     }
+    @Test
+    void CheckRightPaddingForAgivenStringAndCompareWithIncorrectOutput() {
+        String input = "BluePrint";
+        String expected_output = "BluePrint##############";
+        ToDoListCF ComFunc = new ToDoListCF();
 
+        assertNotEquals(ComFunc.rightPadding(input,'#',15),expected_output);
+    }
     private ByteArrayInputStream testIn;
     private ByteArrayOutputStream testOut;
 
@@ -42,7 +60,7 @@ public class ToDoListCFTest {
     }
 
 @Test
-    void ReadProjectAsUserInputFromConsole()
+    void ReadProjectNameAsUserInputFromConsole()
     {
         String Input_Project = "AXA-CORPORATION-Private-LIMITED";
         String expected_Project = "AXA-CORPORATIO";
@@ -51,6 +69,18 @@ public class ToDoListCFTest {
 
         String Output_Project = ComFunc.userInputProject(provideInput(Input_Project));
         assertEquals(Output_Project, expected_Project);
+
+    }
+    @Test
+    void ReadProjectNameAsUserInputFromConsoleInCorrectLength()
+    {
+        String Input_Project = "AXA-CORPORATION-Private-LIMITED";
+        String expected_Project = "AXA-CORPORATION-Private-";
+        ToDoListCF ComFunc = new ToDoListCF();
+        provideInput(Input_Project);
+
+        String Output_Project = ComFunc.userInputProject(provideInput(Input_Project));
+        assertNotEquals(Output_Project, expected_Project);
 
     }
     @Test
@@ -66,13 +96,13 @@ public class ToDoListCFTest {
 
     }
     @Test
-    void ReadDateAsUserInputFromConsoleisEmpty() {
-        String Input_Date = "";
+    void ReadDateInWrongFormatAsUserInputFromConsole() {
+        String Input_Date = "22-03-2007";
         String expected_Date = "22/03/2007";
         ToDoListCF ComFunc = new ToDoListCF();
         provideInput(Input_Date);
 
         String Output_Date = ComFunc.userInputProject(provideInput(Input_Date));
-        assertEquals(Output_Date, expected_Date);
+        assertNotEquals(Output_Date, expected_Date);
     }
 }
