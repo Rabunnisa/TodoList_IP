@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ToDoListEditTaskTest {
     @Test
-    void editTaskByUsingTaskIdAsInput()
+    void editTaskByUsingUniqueTaskIdAsInput()
     {
         ToDoListEditTask editTodo = new ToDoListEditTask();
         ToDoList todo = new ToDoList();
