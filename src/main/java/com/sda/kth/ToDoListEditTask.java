@@ -14,7 +14,7 @@ public class ToDoListEditTask {
 	 * capture the index of the TaskId which needs to be edit .
 	 * @param tasks this Arraylist contains all the tasks which are provided by the user
 	 */
-	public static void editTask(List<String> tasks,String edit_TaskID) {
+	public static void editTask(List<String> tasks,String edit_TaskID,String edit_taskTitle,String edit_project,String edit_strDate,String edit_status) {
 
 
 
@@ -36,7 +36,7 @@ public class ToDoListEditTask {
 
 		if (t_flag == 1) {
 
-			editTaskAtIndex(tasks, editIndex, t_task);
+			editTaskAtIndex(tasks, editIndex, t_task,edit_taskTitle,edit_project,edit_strDate,edit_status);
 		}
 
 		else {
@@ -54,20 +54,16 @@ public class ToDoListEditTask {
 	 * @param taskId it is a unique TaskId provided by the user to edit .
 	 */
 
-	public static void editTaskAtIndex(List<String> tasks, int editIndex, String taskId) {
+	public static void editTaskAtIndex(List<String> tasks, int editIndex, String taskId,String edit_taskTitle,
+									   String edit_project,String edit_strDate,String edit_status) {
 
 		String editEntry = "";
-		String edit_taskTitle = "";
-		String edit_project = "";
-		String edit_strDate = "";
-		String edit_status = "";
 
-		edit_taskTitle = ToDoListCF.userInputTaskTitle(edit_taskTitle);
-		edit_project = ToDoListCF.userInputProject(edit_project);
-		edit_strDate = ToDoListCF.userInputDate(edit_strDate);
+
+
 
 		if (!edit_strDate.trim().equalsIgnoreCase("Invalid")) {
-			edit_status = ToDoListCF.userInputStatus(edit_status);
+
 			editEntry = taskId + ";" + edit_taskTitle + ";" + edit_project + ";" + edit_strDate + ";" + edit_status;
 			tasks.set(editIndex, editEntry);
 			constantString = "Entry Successfully updated";
@@ -79,6 +75,7 @@ public class ToDoListEditTask {
 			ToDoListCF.printString(constantString);
 
 		}
+		// ToDoList.formatLoadArrayList(tasks);
 	}
 
 	/**

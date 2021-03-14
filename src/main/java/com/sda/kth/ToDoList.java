@@ -165,7 +165,15 @@ public class ToDoList {
 					String constantString_taskID ="";
 					constantString_taskID = "Enter the Unique task ID from the above list which you would like to EDIT  ";
 					edit_TaskID = ToDoListCF.userInputTaskID(edit_TaskID,constantString_taskID,tasks);
-					ToDoListEditTask.editTask(tasks,edit_TaskID);
+String edit_taskTitle = "";
+					String edit_project = "";
+					String edit_strDate = "";
+					String edit_status = "";
+					edit_taskTitle = ToDoListCF.userInputTaskTitle(edit_taskTitle);
+					edit_project = ToDoListCF.userInputProject(edit_project);
+					edit_strDate = ToDoListCF.userInputDate(edit_strDate);
+					edit_status = ToDoListCF.userInputStatus(edit_status);
+					ToDoListEditTask.editTask(tasks,edit_TaskID,edit_taskTitle,edit_project,edit_strDate,edit_status);
 					ToDoListCF.printString(mainMenu);
 
 					break;
