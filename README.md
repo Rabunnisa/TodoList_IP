@@ -3,6 +3,11 @@ This application will allow a user to create new tasks, assign them a title and 
 and choose a project for that task to belong to. They will need to use a text based user interface via the command-line . 
 Once they are using the application, the user should be able to also edit, mark as done or remove tasks. 
 They can also quit and save the current task list to file, and then restart the application with the former state restored.
+## Class Diagram
+This is a Class Diagram for the ToDoList App.
+
+![ ToDoList_Class](screenshots/UML_ClassDiagram.png)
+
 ## Getting started
 This application can be run directly via Gradle or via generated jar file.
 ### Run with gradle
