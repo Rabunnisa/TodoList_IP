@@ -6,15 +6,14 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 /**
- * This class is used to Display the tasks provided by the user in the ascending order of Unique TaskId,
-		*/
+ * This class is used to Display the tasks Sorted by Task ID , Project and Date
+ */
 public class ToDoListDisplayTaskList {
 	static String constantString = "";
 
 	/**
-	 * This method is used to validate whether the TaskId provided by the user is valid and also to
-	 * capture the index of the TaskId which needs to be edit .
-	 * @param tasks this Arraylist contains all the tasks which are provided by the user
+	 * This method is used to format and print the current task sorted by unique task id .
+	 * @param tasks this Arraylist contains all the tasks.
 	 */
 	public static void displayTaskList(List<String> tasks) {
 		ToDoList todo = new ToDoList();
@@ -31,7 +30,13 @@ public class ToDoListDisplayTaskList {
 
 		ToDoListCF.printString(constantString);
 	}
-
+	/**
+	 * This method is used to format,sort ArrayList by Project and print the list.
+	 * Bubble sort algorithm is used for sorting .
+	 * @param tasks this Arraylist contains all the tasks.
+	 * @param sortByProject this Arraylist is used to store the task list sorted by Project.
+	 * @param tasks_Project this contains only the project name from the current task list
+	 */
 	public static void displayTaskListByProject(List<String> tasks, List<String> sortByProject,
 			List<String> tasks_Project) {
 		ToDoList.formatLoadArrayList(tasks);
@@ -74,7 +79,14 @@ public class ToDoListDisplayTaskList {
 		ToDoListCF.printString(constantString);
 
 	}
-
+	/**
+	 * This method is used to format,sort ArrayList by Due Date and print the list.
+	 * Bubble sort algorithm is used for sorting .
+	 * @param tasks this Arraylist contains all the tasks.
+	 * @param sortBydate this Arraylist is used to store the task list sorted by Date.
+	 * @param  tasks_Date this contains only the String Date from the current task list
+	 * @param dateList this contains only the Date from the current task list , which is used for comparison in sort operation
+	 */
 	public static void displayTaskListByDate(List<String> tasks, List<String> tasks_Date, List<String> sortBydate,
 			List<Date> dateList) {
 		ToDoList.formatLoadArrayList(tasks);

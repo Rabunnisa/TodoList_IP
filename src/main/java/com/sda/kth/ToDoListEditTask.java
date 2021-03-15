@@ -12,8 +12,14 @@ public class ToDoListEditTask {
 	/**
 	 * This method is used to validate whether the TaskId provided by the user is valid and also to
 	 * capture the index of the TaskId which needs to be edit .
-	 * @param tasks this Arraylist contains all the tasks which are provided by the user
+	 * @param tasks this Arraylist contains all the current tasks.
+	 * @param edit_TaskID it is unique id from the existing task list which to be edited.
+	 * @param edit_taskTitle it is new/edited task title provided by the user.
+	 * @param edit_project tit is new/edited task project provided by the user.
+	 * @param edit_strDate it is new/edited task date provided by the user.
+	 * @param edit_status  it is status of task.
 	 */
+
 	public static void editTask(List<String> tasks,String edit_TaskID,String edit_taskTitle,String edit_project,String edit_strDate,String edit_status) {
 
 
@@ -35,12 +41,15 @@ public class ToDoListEditTask {
 		}
 
 		if (t_flag == 1) {
+			edit_taskTitle = ToDoListCF.userInputTaskTitle(edit_taskTitle);
+			edit_project = ToDoListCF.userInputProject(edit_project);
+			edit_strDate = ToDoListCF.userInputDate(edit_strDate);
 
 			editTaskAtIndex(tasks, editIndex, t_task,edit_taskTitle,edit_project,edit_strDate,edit_status);
 		}
 
 		else {
-			constantString = "Re-Enter correct Task Title , Re-Try";
+			constantString = "Please Enter correct TaskId , Re-Try";
 			ToDoListCF.printString(constantString);
 
 		}
@@ -49,9 +58,13 @@ public class ToDoListEditTask {
 
 	/**
 	 * This method is used to edit the tasks with specific index of TaskId provided.
-	 * @param tasks this Arraylist contains all the tasks which are provided by the user.
+	 * @param tasks this Arraylist contains all the current tasks.
 	 * @param editIndex it is a index derived by the provided unique TaskId  .
 	 * @param taskId it is a unique TaskId provided by the user to edit .
+	 * @param edit_taskTitle it is new/edited task title provided by the user.
+	 * @param edit_project it is new/edited task project provided by the user.
+	 * @param edit_strDate it is new/edited task date provided by the user.
+	 * @param edit_status  it is status of task.
 	 */
 
 	public static void editTaskAtIndex(List<String> tasks, int editIndex, String taskId,String edit_taskTitle,
@@ -62,8 +75,8 @@ public class ToDoListEditTask {
 
 
 
-		if (!edit_strDate.trim().equalsIgnoreCase("Invalid")) {
-
+		if (!edit_strDate.trim().equalsIgnoreCase("")) {
+			edit_status = ToDoListCF.userInputStatus(edit_status);
 			editEntry = taskId + ";" + edit_taskTitle + ";" + edit_project + ";" + edit_strDate + ";" + edit_status;
 			tasks.set(editIndex, editEntry);
 			constantString = "Entry Successfully updated";
@@ -79,8 +92,9 @@ public class ToDoListEditTask {
 	}
 
 	/**
-	 * This method is used to Remove the specific tasks with specific index of TaskId provided.
-	 * @param tasks this Arraylist contains all the tasks which are provided by the user.
+	 * This method is used to Remove a specific tasks with an index of TaskId provided.
+	 * @param tasks this Arraylist contains all the current tasks.
+	 * @param edit_TaskID it is unique id from the existing task list which needs to be removed .
 	 */
 
 	public static void RemoveTaskIndex(List<String> tasks,String edit_TaskID) {
@@ -112,7 +126,7 @@ public class ToDoListEditTask {
 		}
 
 		else {
-			constantString = "In correct Task ID , Re-Try";
+			constantString = "Please Enter correct TaskId , Re-Try";
 			ToDoListCF.printString(constantString);
 
 		}
@@ -120,7 +134,8 @@ public class ToDoListEditTask {
 	}
 	/**
 	 * This method is used to Mark specific task as done with specific TaskId provided by the user.
-	 * @param tasks this Arraylist contains all the tasks which are provided by the user.
+	 * @param tasks this Arraylist contains all the current tasks.
+	 * @param edit_TaskID it is unique id from the existing task list which needs to be marked as status done .
 	 */
 	public static void MarkDone(List<String> tasks,String edit_TaskID)
 
@@ -160,7 +175,7 @@ public class ToDoListEditTask {
 		}
 
 		else {
-			constantString = "In correct Task ID , Re-Try";
+			constantString = "Please Enter correct TaskId , Re-Try";
 
 			ToDoListCF.printString(constantString);
 

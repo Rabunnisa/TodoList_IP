@@ -12,9 +12,18 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Common Function(CF) class.
+ * The purpose of this class is to hold common methods which are used in the application.
+ */
 public class ToDoListCF {
 	static String constantString = "";
-
+	/**
+	 * The purpose of this method is to get the nth occurring index of a particular character in the string .
+	 * @param str String on which operation is required.
+	 *  @param substr is the substring /character whose index needs to be determined .
+	 *  @param n specifies the occurrence of the character/substring.
+	 */
 	public static int ordinalIndexOf(String str, String substr, int n) {
 		int pos = -1;
 		do {
@@ -22,21 +31,32 @@ public class ToDoListCF {
 		} while (n-- > 0 && pos != -1);
 		return pos;
 	}
-
-	public static String rightPadding(String input, char ch, int L) {
+	/**
+	 * The purpose of this method is to to pad(suffix) a particular character, in front of the input string .
+	 * The total length of the padded string is also received as a parameter
+	 * @param input String on which operation is required.
+	 * @param ch is the character which needs to be suffix to the string .
+	 * @param length The total length of the string after padding .
+	 */
+	public static String rightPadding(String input, char ch, int length) {
 
 		//
-		StringBuilder sb = new StringBuilder(L);
+		StringBuilder sb = new StringBuilder(length);
 		sb.append(input);
 
-		while (sb.length() < L)
+		while (sb.length() < length)
 			sb.append(ch);
 
 		return sb.toString();
 		//
 
 	}
-
+	/**
+	 * The purpose of this method is to take the input from the user for the project field ,and  return the same .
+	 * It also replaces all semicolons entered by user with a comma .
+	 * Also restricts/truncates the length of the project to 15 characters.
+	 * @param project Name of the project as string.
+	 */
 	public static String userInputProject(String project) {
 		Scanner sc = new Scanner(System.in);
 		constantString = "Please enter Project";
@@ -51,7 +71,12 @@ public class ToDoListCF {
 		return project;
 
 	}
-
+	/**
+	 * The purpose of this method is to take the input from the user for the DueDate  field ,and  return the same .
+	 * It checks whether the entered date by user has valid format 'dd/MM/yyyy'.In case of wrong format
+	 * exception is raised and strDate is returned as "" .
+	 * @param strDate is the user entered due date .
+	 */
 	public static String userInputDate(String strDate) {
 
 		constantString = "Please enter Due date in the format dd/MM/yyyy";
@@ -71,12 +96,17 @@ public class ToDoListCF {
 			//
 		} catch (ParseException e) {
 
-			strDate = "Invalid";
+			strDate = "";
 
 		}
 		return strDate;
 	}
-
+	/**
+	 * The purpose of this method is to take the input from the user for the status of the task.
+	 * If the status entered by user does not match Pending or Done ,then the default
+	 * status of the task would be Pending
+	 * @param edit_status is the user entered Status.
+	 */
 	public static String userInputStatus(String edit_status) {
 		Scanner sc_edit = new Scanner(System.in);
 		constantString = "Please enter Status - Pending or Done";
@@ -91,6 +121,13 @@ public class ToDoListCF {
 		return edit_status;
 
 	}
+
+	/**
+	 * The purpose of this method is to take the input from the user for the unique task id.
+	 * @param edit_TaskID is the user entered unique task id (Edit operation).
+	 * @param constantString_taskID  it is a constant string to print on the console .
+	 * @param tasks is the array list which has all the current tasks .
+	 */
 	public static String userInputTaskID(String edit_TaskID,String constantString_taskID,List<String> tasks) {
 		ToDoList.formatLoadArrayList(tasks);
 		constantString = "************Here is the Current To Do List**********";
@@ -105,7 +142,13 @@ public class ToDoListCF {
 		edit_TaskID = editTask_input.next();
 		return edit_TaskID;
 	}
+	/**
+	 * The purpose of this method is to take the input from the user for the Task title/name.
+	 * It also replaces all semicolons entered by user with a comma .
+	 * Also restricts/truncates the length of the project to 20 characters.
+	 * @param taskTitle is the user entered taskTitle .
 
+	 */
 	public static String userInputTaskTitle(String taskTitle) {
 		Scanner sc = new Scanner(System.in);
 
@@ -137,7 +180,10 @@ public class ToDoListCF {
 		// taskTitle = sc.nextLine();
 
 	}
-
+	/**
+	 * The purpose of this method is to print the provided array list using iterator .
+	 * @param print_todoList is the ArrayList which needs to be printed .
+	 */
 	public static void printArrayList(List<String> print_todoList) {
 
 		Iterator<String> it_PrintToDoList = print_todoList.iterator();
@@ -150,13 +196,23 @@ public class ToDoListCF {
 		//
 
 	}
-
+	/**
+	 * The purpose of this method is to print the provided String .
+	 * @param constantString is the string  which needs to be printed .
+	 */
 	public static void printString(String constantString) {
 
 		System.out.println(constantString);
 		// System.out.println("");
 	}
 
+
+
+
+	/**
+	 * The purpose of this method is to write contents of the array list into a file.
+	 * @param tasks is the array list which has all the current tasks .
+	 */
 	public static void writeToFile(List<String> tasks) throws FileNotFoundException, IOException {
 
 		File file = new File("src/main/resources/Tasks_LoadFile.txt");
@@ -171,10 +227,5 @@ public class ToDoListCF {
 		fout.close();
 	}
 
-	public static void clearConsole() {
 
-		printString("\u000C");
-
-		printString("\f");
-	}
 }
