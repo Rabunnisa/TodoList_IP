@@ -43,7 +43,7 @@ java -jar build/libs/IP-1.0-SNAPSHOT.jar
 
 5: **You can validate , the new task added by selecting option 1 from Main menu:**
 
-![ ToDoList_5](screenshots/toDoListApp-5a.png)
+![ ToDoList_5](screenshots/toDoListApp-5.png)
 
 6:  **From the Main Menu ,select option 3 to Edit , Remove or Mark a task as Done. Here sub options will be presented to select required operation.Select sub option 01 to Edit a task by selecting unique TaskID**
 
