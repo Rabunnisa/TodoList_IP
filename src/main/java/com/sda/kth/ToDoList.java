@@ -79,7 +79,7 @@ public class ToDoList {
                 ToDoListCF.printString(constantString);
 
                 break;
-                // choice = 0;
+
             }
 
             switch (choice) {
@@ -227,6 +227,7 @@ public class ToDoList {
     /**
      * This method is used to format and load the Todolist it also loads the other Arraylists tasks_Project, tasks_Date
      * TaskID which will be used to perform operations like sorting by Date and Project
+     *
      * @param tasks is the array list which has all the tasks to be formatted.
      */
     public static byte formatLoadArrayList(List<String> tasks) {
