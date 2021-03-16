@@ -7,20 +7,20 @@ package com.sda.kth;
  * @author Rabunnisa Zabiulla
  */
 public class Main {
-	public static String constantString = "";
+    public static String constantString = "";
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		ToDoList todo = new ToDoList();
-		ToDoListCF listCF = new ToDoListCF();
+        ToDoList todo = new ToDoList();
+        ToDoListCF listCF = new ToDoListCF();
 
-		todo.readFile();
-		constantString = " ********** Welcome to ToDoLy **********";
-		listCF.printString(constantString);
+        todo.readFile();
+        constantString = " ********** Welcome to ToDoLy **********";
+        listCF.printString(constantString);
 
-		todo.calculateTaskStatus();
-		todo.initSwitch();
+        todo.calculateTaskStatus();
+        todo.initSwitch();
 
-	}
+    }
 
 }

@@ -21,6 +21,7 @@ public class ToDoListCF {
 
     /**
      * The purpose of this method is to get the nth occurring index of a particular character in the string .
+     *
      * @param str    String on which operation is required.
      * @param substr is the substring /character whose index needs to be determined .
      * @param n      specifies the occurrence of the character/substring.
@@ -100,7 +101,7 @@ public class ToDoListCF {
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             strDate = formatter.format(d);
 
-            //
+
         } catch (ParseException e) {
 
             strDate = "";
@@ -111,8 +112,8 @@ public class ToDoListCF {
 
     /**
      * The purpose of this method is to take the input from the user for the status of the task.
-     * If the status entered by user does not match Pending or Done ,then the default
-     * status of the task would be Pending
+     * If the status entered by user does not match Pending or Done ,then the default status of the
+     * task would be Pending
      *
      * @param edit_status is the user entered Status.
      */
@@ -192,6 +193,7 @@ public class ToDoListCF {
 
     /**
      * The purpose of this method is to print the provided array list using iterator .
+     *
      * @param print_todoList is the ArrayList which needs to be printed .
      */
     public static void printArrayList(List<String> print_todoList) {

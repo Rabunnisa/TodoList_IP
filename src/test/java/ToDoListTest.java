@@ -1,6 +1,7 @@
 import com.sda.kth.ToDoList;
 import com.sda.kth.ToDoListCF;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -9,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 /**
  * The purpose of this class is to test various functionalities or methods of this class for different scenarios of input .
  */
@@ -29,6 +31,7 @@ public class ToDoListTest {
         assertEquals(tasks, expected_tasks);
 
     }
+
     /**
      * This Method is used to the test whether the given input task is stored in a consistent
      * format with appropriate spaces for non formatted task .
@@ -45,6 +48,7 @@ public class ToDoListTest {
 
 
     }
+
     /**
      * This Method is used to the test whether the given input task is stored in a consistent
      * format with appropriate spaces for task added with empty values  .

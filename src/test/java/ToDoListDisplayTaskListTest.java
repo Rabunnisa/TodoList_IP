@@ -1,7 +1,6 @@
 import com.sda.kth.ToDoList;
 import com.sda.kth.ToDoListDisplayTaskList;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,9 +9,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * The purpose of this class is to test various functionalities or methods of ToDoListDisplayTaskList class for
- * different scenarios of input .
+ * different values of input .
  */
 public class ToDoListDisplayTaskListTest {
+
     /**
      * This test case Method is used to test whether the given input task is displayed , sorted by project name.
      */
@@ -49,6 +49,7 @@ public class ToDoListDisplayTaskListTest {
         assertEquals(sortByProject, excepted_tasks);
 
     }
+
     /**
      * This test case Method is used to perform negative test on Sort by Project functionality , on the task list
      * Expected Array is provided un-sorted.
@@ -86,6 +87,7 @@ public class ToDoListDisplayTaskListTest {
         assertNotEquals(sortByProject, excepted_tasks);
 
     }
+
     /**
      * This test case Method is used to test whether the given input task list is displayed , sorted by Date.
      */
@@ -122,6 +124,7 @@ public class ToDoListDisplayTaskListTest {
         assertEquals(sortByDate, excepted_tasks);
 
     }
+
     /**
      * This test case Method is used to perform negative test on Sort by Date functionality , on the task list
      * Expected Array is provided un-sorted.

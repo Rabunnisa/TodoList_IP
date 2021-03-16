@@ -24,7 +24,6 @@ public class ToDoList {
     public static List<Date> dateList = new ArrayList<Date>();
     static String constantString = "";
 
-    //
 
     /**
      * This method is used to load the tasks from the input file in which the tasks are semicolon separated .

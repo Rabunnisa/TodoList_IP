@@ -10,17 +10,18 @@ import java.util.List;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 /**
  * The purpose of this class is to test addTask method of this class .
  */
 public class ToDoListAddTaskTest {
     /**
-     * The purpose of this method is to test whether the task provided by the user is getting added or not
+     * The purpose of this test method is to test whether the task provided by the user is getting added or not
      * with all values in correct format  .
      */
     @Test
-    void CheckWhetherTheGivenTaskIsAdded()
-    {ToDoListAddTask aTask = new ToDoListAddTask();
+    void CheckWhetherTheGivenTaskIsAdded() {
+        ToDoListAddTask aTask = new ToDoListAddTask();
         List<String> tasks = new ArrayList<>();
         List<String> TaskID = new ArrayList<>();
         List<String> tasks_Project = new ArrayList<>();
@@ -34,29 +35,30 @@ public class ToDoListAddTaskTest {
         tasks_Date.add("21/03/2021");
         tasks_Date.add("03/03/2021");
         tasks.add("TaskID;   TaskTitle;          Project;       DueDate;       Status  ");
-        tasks.add("001" + ";"+ "Design" +";"+  "RPA" + ";"+ "21/03/2021" + ";"+ "Pending");
-        tasks.add("002" + ";"+ "Design1" +";"+  "RPEM" + ";"+ "03/03/2021" + ";"+ "Done");
+        tasks.add("001" + ";" + "Design" + ";" + "RPA" + ";" + "21/03/2021" + ";" + "Pending");
+        tasks.add("002" + ";" + "Design1" + ";" + "RPEM" + ";" + "03/03/2021" + ";" + "Done");
         excepted_tasks.addAll(tasks);
 
         String expected_TaskID = "003";
         String expected_tasksTitle = "BluePrint";
         String expected_Project = "EINV";
         String expected_DueDate = "22/05/2021";
-        excepted_tasks.add(expected_TaskID  + ";"+ expected_tasksTitle  + ";"+expected_Project+ ";"+expected_DueDate+ ";"+ "Pending");
+        excepted_tasks.add(expected_TaskID + ";" + expected_tasksTitle + ";" + expected_Project + ";" + expected_DueDate + ";" + "Pending");
 
-        aTask.AddTask(tasks,TaskID,tasks_Project,tasks_Date,"BluePrint","EINV","22/05/2021");
+        aTask.AddTask(tasks, TaskID, tasks_Project, tasks_Date, "BluePrint", "EINV", "22/05/2021");
 
-        assertEquals(tasks,excepted_tasks );
+        assertEquals(tasks, excepted_tasks);
 
 
     }
+
     /**
-     * The purpose of this method is to test whether the task provided by the user is getting added when date is given
+     * The purpose of this test method is to test whether the task provided by the user is getting added when date is given
      * in another format .
      */
     @Test
-    void CheckWhetherTheGivenTaskIsAddedWhenDateIsIncorrectFormat()
-    {ToDoListAddTask aTask = new ToDoListAddTask();
+    void CheckWhetherTheGivenTaskIsAddedWhenDateIsIncorrectFormat() {
+        ToDoListAddTask aTask = new ToDoListAddTask();
         List<String> tasks = new ArrayList<>();
         List<String> TaskID = new ArrayList<>();
         List<String> tasks_Project = new ArrayList<>();
@@ -70,19 +72,19 @@ public class ToDoListAddTaskTest {
         tasks_Date.add("21/03/2021");
         tasks_Date.add("03/03/2021");
         tasks.add("TaskID;   TaskTitle;          Project;       DueDate;       Status  ");
-        tasks.add("001" + ";"+ "Design" +";"+  "RPA" + ";"+ "21/03/2021" + ";"+ "Pending");
-        tasks.add("002" + ";"+ "Design1" +";"+  "RPEM" + ";"+ "03/03/2021" + ";"+ "Done");
+        tasks.add("001" + ";" + "Design" + ";" + "RPA" + ";" + "21/03/2021" + ";" + "Pending");
+        tasks.add("002" + ";" + "Design1" + ";" + "RPEM" + ";" + "03/03/2021" + ";" + "Done");
         excepted_tasks.addAll(tasks);
 
         String expected_TaskID = "003";
         String expected_tasksTitle = "BluePrint";
         String expected_Project = "EINV";
         String expected_DueDate = "22/05/2021";
-        excepted_tasks.add(expected_TaskID  + ";"+ expected_tasksTitle  + ";"+expected_Project+ ";"+expected_DueDate+ ";"+ "Pending");
+        excepted_tasks.add(expected_TaskID + ";" + expected_tasksTitle + ";" + expected_Project + ";" + expected_DueDate + ";" + "Pending");
 
-        aTask.AddTask(tasks,TaskID,tasks_Project,tasks_Date,"BluePrint","EINV","22-05-2021");
+        aTask.AddTask(tasks, TaskID, tasks_Project, tasks_Date, "BluePrint", "EINV", "22-05-2021");
 
-        assertNotEquals(tasks,excepted_tasks );
+        assertNotEquals(tasks, excepted_tasks);
 
 
     }
