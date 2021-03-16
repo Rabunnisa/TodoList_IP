@@ -7,8 +7,16 @@ import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * The purpose of this class is to test various functionalities or methods of ToDoListCF(Common Functionalities) class for
+ * various input .
+ */
 public class ToDoListCFTest {
+
+
+    /**
+     * This test Method The purpose of this method is to get the nth occurring index of a particular character in the string
+     */
     @Test
     void CheckOrdinalIndexOfAString() {
         ToDoListCF ComFunc = new ToDoListCF();
@@ -41,7 +49,7 @@ public class ToDoListCFTest {
         assertEquals(ComFunc.rightPadding(input,'#',15),expected_output);
     }
     @Test
-    void CheckRightPaddingForAgivenStringAndCompareWithIncorrectOutput() {
+    void CheckRightPaddingForAGivenStringAndCompareWithIncorrectOutput() {
         String input = "BluePrint";
         String expected_output = "BluePrint##############";
         ToDoListCF ComFunc = new ToDoListCF();
@@ -60,7 +68,7 @@ public class ToDoListCFTest {
     }
 
 @Test
-    void ReadProjectNameAsUserInputFromConsole()
+    void CheckToReadProjectNameAsUserInputFromConsole()
     {
         String Input_Project = "AXA-CORPORATION-Private-LIMITED";
         String expected_Project = "AXA-CORPORATIO";
@@ -72,7 +80,7 @@ public class ToDoListCFTest {
 
     }
     @Test
-    void ReadProjectNameAsUserInputFromConsoleInCorrectLength()
+    void checkToReadProjectNameAsUserInputFromConsoleInCorrectLength()
     {
         String Input_Project = "AXA-CORPORATION-Private-LIMITED";
         String expected_Project = "AXA-CORPORATION-Private-";
@@ -84,7 +92,7 @@ public class ToDoListCFTest {
 
     }
     @Test
-    void ReadDateAsUserInputFromConsole()
+    void checkToReadDateAsUserInputFromConsole()
     {
         String Input_Date = "22/05/2021";
         String expected_Date = "22/05/2021";
@@ -96,7 +104,7 @@ public class ToDoListCFTest {
 
     }
     @Test
-    void ReadDateInWrongFormatAsUserInputFromConsole() {
+    void checkToReadDateInWrongFormatAsUserInputFromConsole() {
         String Input_Date = "22-03-2007";
         String expected_Date = "22/03/2007";
         ToDoListCF ComFunc = new ToDoListCF();

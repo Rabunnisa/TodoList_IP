@@ -21,7 +21,6 @@ public class ToDoListCF {
 
     /**
      * The purpose of this method is to get the nth occurring index of a particular character in the string .
-     *
      * @param str    String on which operation is required.
      * @param substr is the substring /character whose index needs to be determined .
      * @param n      specifies the occurrence of the character/substring.

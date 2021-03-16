@@ -10,9 +10,14 @@ import java.util.List;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * The purpose of this class is to test addTask method of this class .
+ */
 public class ToDoListAddTaskTest {
-
+    /**
+     * The purpose of this method is to test whether the task provided by the user is getting added or not
+     * with all values in correct format  .
+     */
     @Test
     void CheckWhetherTheGivenTaskIsAdded()
     {ToDoListAddTask aTask = new ToDoListAddTask();
@@ -45,6 +50,10 @@ public class ToDoListAddTaskTest {
 
 
     }
+    /**
+     * The purpose of this method is to test whether the task provided by the user is getting added when date is given
+     * in another format .
+     */
     @Test
     void CheckWhetherTheGivenTaskIsAddedWhenDateIsIncorrectFormat()
     {ToDoListAddTask aTask = new ToDoListAddTask();
