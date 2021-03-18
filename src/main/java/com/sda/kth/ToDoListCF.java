@@ -133,7 +133,7 @@ public class ToDoListCF {
     }
 
     /**
-     * The purpose of this method is to take the input from the user for the unique task id.
+     * The purpose of this method is to take the input from the user for the unique task id for EDIT Operations.
      *
      * @param edit_TaskID           is the user entered unique task id (Edit operation).
      * @param constantString_taskID it is a constant string to print on the console .
@@ -225,6 +225,7 @@ public class ToDoListCF {
      * @param tasks is the array list which has all the current tasks .
      */
     public static void writeToFile(List<String> tasks) throws FileNotFoundException, IOException {
+        ToDoList.formatLoadArrayList(tasks);
 
         File file = new File("src/main/resources/Tasks_LoadFile.txt");
 

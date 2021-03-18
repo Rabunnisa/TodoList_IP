@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * The purpose of this class is to test various functionalities or methods of this class for different scenarios of input .
+ * The purpose of this Test class is to test methods of the class ToDoList.
  */
 public class ToDoListTest {
     /**

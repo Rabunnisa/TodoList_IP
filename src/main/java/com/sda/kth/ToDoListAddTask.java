@@ -39,7 +39,7 @@ public class ToDoListAddTask {
             tasks_Project.add(project);
             tasks_Date.add(strDate);
 
-            constantString = "Entry Successfully added";
+            constantString = "Entry Successfully added with initial status Pending";
             ToDoListCF.printString(constantString);
             constantString = "";
             ToDoListCF.printString(constantString);

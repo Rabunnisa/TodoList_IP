@@ -8,8 +8,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * The purpose of this class is to test various functionalities or methods of ToDoListDisplayTaskList class for
- * different values of input .
+ * The purpose of this Test class is to test methods of the class ToDoListDisplayTaskList.
  */
 public class ToDoListDisplayTaskListTest {
 

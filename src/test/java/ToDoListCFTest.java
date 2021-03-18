@@ -8,8 +8,7 @@ import java.util.Scanner;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 /**
- * The purpose of this class is to test various functionalities or methods of ToDoListCF(Common Functionalities) class for
- * various input .
+ *  The purpose of this Test class is to test methods of the class ToDoListCF.
  */
 public class ToDoListCFTest {
 
@@ -23,7 +22,8 @@ public class ToDoListCFTest {
     }
 
     /**
-     * This test Method helps to get the nth occurring index of a particular character in the string.
+     * This test Method is used to validate whether nth occurring index of a particular character is correctly retrieved.
+     * To confirm the tests substring operation is used on the String.
      */
     @Test
     void CheckOrdinalIndexOfAString() {
@@ -38,7 +38,8 @@ public class ToDoListCFTest {
     }
 
     /**
-     * This test Method helps to get the nth occurring index of a particular character in the string of incorrect value..
+     * This test Method is used to validate whether nth occurring index of a particular character is correctly retrieved.
+     * To confirm the tests substring operation is used on the String and the desired result is compared with inCorrect value.
      */
     @Test
     void CheckOrdinalIndexOfAStringAndCompareForIncorrectValue() {
@@ -53,7 +54,7 @@ public class ToDoListCFTest {
     }
 
     /**
-     * This test Method helps to check a pad(suffix) a particular character,
+     * This test Method helps to validate padding(suffix) of a particular character,
      * in front of the input string .
      */
     @Test
@@ -66,8 +67,8 @@ public class ToDoListCFTest {
     }
 
     /**
-     * This test Method helps to check a pad(suffix) a particular character,
-     * in front of the input string for incorrect output.
+     * This test Method helps to validate padding(suffix) of a particular character,
+     * in front of the input string. Desired output is compared with incorrectly padded string.
      */
     @Test
     void CheckRightPaddingForAGivenStringAndCompareWithIncorrectOutput() {

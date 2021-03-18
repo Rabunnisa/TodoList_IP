@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * This class is used to Display the tasks Sorted by Task ID , Project and Date
+ * This class is used to Display the current tasks Sorted by Task ID , Project and Date
  */
 public class ToDoListDisplayTaskList {
     static String constantString = "";
@@ -15,7 +15,7 @@ public class ToDoListDisplayTaskList {
     /**
      * This method is used to format and print the current task sorted by unique task id .
      *
-     * @param tasks this Arraylist contains all the tasks.
+     * @param tasks this Arraylist contains all the current tasks.
      */
     public static void displayTaskList(List<String> tasks) {
         ToDoList todo = new ToDoList();
@@ -37,7 +37,7 @@ public class ToDoListDisplayTaskList {
      * This method is used to format,sort ArrayList by Project and print the list.
      * Bubble sort algorithm is used for sorting .
      *
-     * @param tasks         this Arraylist contains all the tasks.
+     * @param tasks         this Arraylist contains all the current tasks.
      * @param sortByProject this Arraylist is used to store the task list sorted by Project.
      * @param tasks_Project this contains only the project name from the current task list
      */

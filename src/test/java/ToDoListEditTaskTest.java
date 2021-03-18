@@ -11,12 +11,11 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * The purpose of this class is to test various functionalities or methods of ToDoListEditTask class for
- * different values of input .
+ * The purpose of this Test class is to test methods of the class ToDoListEditTask.
  */
 public class ToDoListEditTaskTest {
     /**
-     * This test case Method is used to test whether the task can be edited with providing the non existent taskid .
+     * This test case Method is used to test whether the task can be edited by providing a non existent taskid .
      */
 
     @Test
@@ -42,7 +41,8 @@ public class ToDoListEditTaskTest {
     }
 
     /**
-     * This Method is used to test whether the task can be edited with providing the wrong taskId .
+     * This Method is used to test whether the task can be edited with providing
+     * the wrong taskId , this time a character String.
      */
     @Test
     void checkIfWeCanEditTaskWithEnteringWrongTaskID() {

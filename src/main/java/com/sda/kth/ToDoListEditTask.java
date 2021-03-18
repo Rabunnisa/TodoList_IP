@@ -86,14 +86,14 @@ public class ToDoListEditTask {
             ToDoListCF.printString(constantString);
 
         }
-        // ToDoList.formatLoadArrayList(tasks);
+
     }
 
     /**
      * This method is used to Remove a specific tasks with an index of TaskId provided.
      *
-     * @param tasks       this Arraylist contains all the current tasks.
-     * @param edit_TaskID it is unique id from the existing task list which needs to be removed .
+     * @param tasks         this Arraylist contains all the current tasks.
+     * @param edit_TaskID   it is unique id from the existing task list which needs to be removed .
      */
 
     public static void RemoveTaskIndex(List<String> tasks, String edit_TaskID) {

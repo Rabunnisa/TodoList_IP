@@ -12,7 +12,7 @@ import java.util.Scanner;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * The purpose of this class is to test addTask method of this class .
+ * The purpose of this Test class is to test methods of the class ToDoListAddTask.
  */
 public class ToDoListAddTaskTest {
     /**

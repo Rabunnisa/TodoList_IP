@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * The purpose of this class is to provide 4 methods which are used to read a file,Provide user options using initSwitch,
+ * This class has 4 methods which are used to read a file,Provide user options using initSwitch,
  * calculate task status,load and format the Arraylist.
  */
 public class ToDoList {
@@ -157,8 +157,6 @@ public class ToDoList {
                         ToDoListCF.printString(constantString);
 
                     }
-
-
                     switch (subChoiceEdit) {
                         case 01:
                             String edit_TaskID = "";
@@ -309,7 +307,7 @@ public class ToDoList {
     }
 
     /**
-     * This method is called at the beginning of the execution ,to calculate/display the number of tasks
+     * This method is called at the beginning of the App right after loading the initial tasks ,to calculate/display the number of tasks
      * which are pending and Done
      */
 
