@@ -29,7 +29,13 @@ public class ToDoListAddTask {
 
         if (!strDate.trim().equalsIgnoreCase("")) {
 
-            String taskID_val = TaskID.get(TaskID.size() - 1).trim();
+
+            String taskID_val = "";
+            if(TaskID.size()>0)
+             taskID_val = TaskID.get(TaskID.size() - 1).trim();
+            else
+                taskID_val = "000";
+
             int taskIDCounter = Integer.parseInt(taskID_val) + 1;
 
             tasks.add(String.format("%03d", taskIDCounter) + ";" + taskTitle + ";" + project + ";" + strDate + ";"

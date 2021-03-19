@@ -163,7 +163,7 @@ gradle-app.setting
 
 ### Gradle Patch ###
 **/build/
-src/main/resources/Tasks_LoadFile.txt
+
 
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,intellij+all,gradle,java
