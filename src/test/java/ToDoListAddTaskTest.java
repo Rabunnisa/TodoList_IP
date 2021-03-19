@@ -21,6 +21,8 @@ public class ToDoListAddTaskTest {
      */
     @Test
     void CheckWhetherTheGivenTaskIsAdded() {
+        ToDoList todo = new ToDoList();
+
         ToDoListAddTask aTask = new ToDoListAddTask();
         List<String> tasks = new ArrayList<>();
         List<String> TaskID = new ArrayList<>();
@@ -46,7 +48,8 @@ public class ToDoListAddTaskTest {
         excepted_tasks.add(expected_TaskID + ";" + expected_tasksTitle + ";" + expected_Project + ";" + expected_DueDate + ";" + "Pending");
 
         aTask.AddTask(tasks, TaskID, tasks_Project, tasks_Date, "BluePrint", "EINV", "22/05/2021");
-
+        todo.formatLoadArrayList (excepted_tasks);
+        todo.formatLoadArrayList (tasks);
         assertEquals(tasks, excepted_tasks);
 
 
