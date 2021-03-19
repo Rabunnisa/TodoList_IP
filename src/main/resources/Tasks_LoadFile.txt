@@ -1,2 +1,6 @@
-001;      RSA;                rta;           12/09/2021;    Pending   
-002;      gdd;                thhe;          07/05/2003;    Pending   
+TaskID;   TaskTitle;          Project;       DueDate;       Status    
+001;      BluePrint;          RPA;           03/03/2021;    Done      
+002;      Code;               RPA;           20/05/2021;    Pending   
+003;      Tech.Specification; Migration;     19/04/2021;    Pending
+004;      UAT;                E-INV;         21/03/2021;    Done      
+005;      Design;             ERP Rollout;   21/01/2022;    Done

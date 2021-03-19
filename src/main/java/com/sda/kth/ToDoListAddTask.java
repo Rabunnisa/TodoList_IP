@@ -23,7 +23,7 @@ public class ToDoListAddTask {
                                List<String> tasks_Date, String taskTitle, String project, String strDate) {
 
 
-
+        ToDoList.formatLoadArrayList(tasks);
         String status_init = "Pending";
 
 
