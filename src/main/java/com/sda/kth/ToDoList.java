@@ -1,8 +1,6 @@
 package com.sda.kth;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.InputMismatchException;
@@ -33,8 +31,8 @@ public class ToDoList {
         tasks.clear();
 
         try {
-
-            Scanner s = new Scanner(new File("src/main/resources/Tasks_LoadFile.txt"));
+            InputStream inputStream = new FileInputStream("src/main/resources/Tasks_LoadFile.txt");
+            Scanner s = new Scanner(inputStream);
             while (s.hasNextLine()) {
                 tasks.add(s.nextLine());
 

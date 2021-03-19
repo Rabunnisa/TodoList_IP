@@ -22,8 +22,7 @@ public class ToDoListAddTask {
     public static void AddTask(List<String> tasks, List<String> TaskID, List<String> tasks_Project,
                                List<String> tasks_Date, String taskTitle, String project, String strDate) {
 
-        constantString = "Adding elements to the list";
-        ToDoListCF.printString(constantString);
+
 
         String status_init = "Pending";
 
