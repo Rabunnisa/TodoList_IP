@@ -26,26 +26,39 @@ public class ToDoList {
     /**
      * This method is used to load the tasks from the input file in which the tasks are semicolon separated .
      */
-    public void readFile() {
+    public void readFile()
+    {
+    tasks.clear();
 
-        tasks.clear();
 
-        try {
-            InputStream inputStream = new FileInputStream("src/main/resources/Tasks_LoadFile.txt");
-            Scanner s = new Scanner(inputStream);
-            while (s.hasNextLine()) {
-                tasks.add(s.nextLine());
+    try {
+        File todosfile = new File("src/main/resources/Tasks_LoadFile.txt");
+        if (!todosfile.exists()) {
+            todosfile.createNewFile();
 
-            }
-
-            s.close();
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         }
-        ToDoList.formatLoadArrayList(tasks);
+        else{
+            try {
+                InputStream inputStream = new FileInputStream("src/main/resources/Tasks_LoadFile.txt");
+                Scanner s = new Scanner(inputStream);
+                while (s.hasNextLine()) {
+                    tasks.add(s.nextLine());
 
+                }
+                s.close();
+            } catch (FileNotFoundException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
+    } catch (IOException e) {
     }
+
+
+    ToDoList.formatLoadArrayList(tasks);
+}
+
 
     /**
      * This method is used to provide user options to select operations on the TodoList .

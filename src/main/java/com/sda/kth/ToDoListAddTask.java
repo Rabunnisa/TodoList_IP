@@ -33,8 +33,10 @@ public class ToDoListAddTask {
             String taskID_val = "";
             if(TaskID.size()>0)
              taskID_val = TaskID.get(TaskID.size() - 1).trim();
-            else
+            else {
                 taskID_val = "000";
+                tasks.add("TaskID; TaskTitle; Project; DueDate; Status");
+            }
 
             int taskIDCounter = Integer.parseInt(taskID_val) + 1;
 
