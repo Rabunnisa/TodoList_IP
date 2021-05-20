@@ -163,7 +163,7 @@ gradle-app.setting
 
 ### Gradle Patch ###
 **/build/
-src/main/resources/Tasks_LoadFile.txt
+
 
 
 
